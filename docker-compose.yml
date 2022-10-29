@@ -1,0 +1,13 @@
+version: '2'
+services:
+  dev:
+    build: .
+    image: imphpsms:dev
+    privileged: false
+    restart: unless-stopped
+    ports:
+    - 32306:9502
+    volumes:
+    - .:/var/www/html
+    tty: true
+    command: /bin/bash
