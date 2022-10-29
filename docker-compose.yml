@@ -7,6 +7,7 @@ services:
     restart: unless-stopped
     ports:
     - 32306:9502
+    - 32307:80
     volumes:
     - .:/var/www/html
     tty: true

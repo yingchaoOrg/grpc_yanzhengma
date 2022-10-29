@@ -15,6 +15,7 @@ use Hyperf\Di\Annotation\Inject;
 use Hyperf\HttpServer\Contract\RequestInterface;
 use Hyperf\HttpServer\Contract\ResponseInterface;
 use Psr\Container\ContainerInterface;
+use Psr\SimpleCache\CacheInterface;
 
 abstract class AbstractController
 {
@@ -23,6 +24,12 @@ abstract class AbstractController
      * @var ContainerInterface
      */
     protected $container;
+
+    /**
+     * @Inject
+     * @var CacheInterface
+     */
+    protected $cache;
 
     /**
      * @Inject

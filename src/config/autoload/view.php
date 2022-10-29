@@ -1,6 +1,7 @@
 <?php
 
 declare(strict_types=1);
+
 /**
  * This file is part of Hyperf.
  *
@@ -9,10 +10,14 @@ declare(strict_types=1);
  * @contact  group@hyperf.io
  * @license  https://github.com/hyperf/hyperf/blob/master/LICENSE
  */
+
+use Hyperf\View\Mode;
+
 return [
-    'default' => [
-        'driver' => Hyperf\Cache\Driver\RedisDriver::class,
-        'packer' => Hyperf\Utils\Packer\PhpSerializerPacker::class,
-        'prefix' => 'sms_:',
+    'engine' => \Hyperf\ViewEngine\HyperfViewEngine::class,
+    'mode'   => Mode::SYNC,
+    'config' => [
+        'view_path'  => BASE_PATH . '/app/View/',
+        'cache_path' => BASE_PATH . '/runtime/view/',
     ],
 ];

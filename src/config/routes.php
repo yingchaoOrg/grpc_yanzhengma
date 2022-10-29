@@ -18,7 +18,7 @@ Router::get('/favicon.ico', function () {
 });
 
 Router::addServer('grpc', function () {
-    Router::addGroup('/Grpc.User', function () {
-        Router::post('/Login', 'App\Controller\LoginController@handle');
+    Router::addGroup('/Grpc.Sms', function () {
+        Router::post('/SendVerify', 'App\Controller\SendVerifyController@handle');
     });
 });

@@ -27,7 +27,10 @@
         "hyperf/memory": "~2.2.0",
         "hyperf/model-cache": "~2.2.0",
         "hyperf/process": "~2.2.0",
-        "hyperf/redis": "~2.2.0"
+        "hyperf/redis": "~2.2.0",
+        "hyperf/view": "^2.2",
+        "hyperf/view-engine": "^2.2",
+        "symfony/var-dumper": "^5.4"
     },
     "require-dev": {
         "friendsofphp/php-cs-fixer": "^3.0",
@@ -76,6 +79,7 @@
             "rm -rf runtime/container"
         ],
         "test": "co-phpunit --prepend test/bootstrap.php -c phpunit.xml --colors=always",
+        "testclass": "co-phpunit --prepend test/bootstrap.php -c phpunit.xml --colors=always",
         "cs-fix": "php-cs-fixer fix $1",
         "analyse": "phpstan analyse --memory-limit 300M -l 0 -c phpstan.neon ./app ./config",
         "start": [

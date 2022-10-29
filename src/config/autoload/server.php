@@ -28,6 +28,16 @@ return [
                 Event::ON_REQUEST => [ \Hyperf\GrpcServer\Server::class, 'onRequest' ],
             ],
         ],
+        [
+            'name' => 'http',
+            'type' => Server::SERVER_HTTP,
+            'host' => '0.0.0.0',
+            'port' => 80,
+            'sock_type' => SWOOLE_SOCK_TCP,
+            'callbacks' => [
+                Event::ON_REQUEST => [Hyperf\HttpServer\Server::class, 'onRequest'],
+            ],
+        ],
     ],
     'settings'  => [
         Constant::OPTION_ENABLE_COROUTINE    => true,

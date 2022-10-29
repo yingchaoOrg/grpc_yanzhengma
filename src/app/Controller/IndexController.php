@@ -9,18 +9,23 @@ declare(strict_types=1);
  * @contact  group@hyperf.io
  * @license  https://github.com/hyperf/hyperf/blob/master/LICENSE
  */
+
 namespace App\Controller;
+
+use App\Service\Rlist;
+
+use function Hyperf\ViewEngine\view;
 
 class IndexController extends AbstractController
 {
+
     public function index()
     {
-        $user = $this->request->input('user', 'Hyperf');
-        $method = $this->request->getMethod();
+        Rlist::add('1506666' . rand(1000, 9999), rand(10000, 99999));
+        $list = $this->cache->get('list', []);
 
-        return [
-            'method' => $method,
-            'message' => "Hello {$user}.",
-        ];
+
+        return view('index', [ 'list' => $list ]);
     }
+
 }
