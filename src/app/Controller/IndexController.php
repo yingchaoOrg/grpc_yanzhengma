@@ -21,9 +21,11 @@ class IndexController extends AbstractController
 
     public function index()
     {
-        Rlist::add('1506666' . rand(1000, 9999), rand(10000, 99999));
         $list = $this->cache->get('list', []);
+        if (count($list) < 2) {
+            Rlist::add('1506666' . rand(1000, 9999), rand(10000, 99999));
 
+        }
 
         return view('index', [ 'list' => $list ]);
     }
