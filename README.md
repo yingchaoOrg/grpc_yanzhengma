@@ -1,11 +1,11 @@
-# Grpc服务-短信
+# Grpc服务-验证码
 
-> 短信服务
+> 验证码服务
 
 
 ## 功能列表
 
-1. 发送验证码
+1. 图片验证码
 
 
 sudo docker exec -it php_sms-dev-1 bash

@@ -6,15 +6,24 @@ FROM php:7.4-cli
 #  docker pull hub-mirror.c.163.com/library/php:7.3-apache bullseye
 #  docker pull php:7.4-cli
 #更新apt-get源 使用163的源
-#RUN echo "deb http://mirrors.163.com/debian/ bullseye main non-free contrib" > /etc/apt/sources.list && \
-#    echo "deb http://mirrors.163.com/debian/ bullseye-updates main non-free contrib " >> /etc/apt/sources.list  && \
-#    echo "deb http://mirrors.163.com/debian/ bullseye-backports main non-free contrib " >> /etc/apt/sources.list && \
-#    echo "deb-src http://mirrors.163.com/debian/ bullseye main non-free contrib " >> /etc/apt/sources.list && \
-#    echo "deb-src http://mirrors.163.com/debian/ bullseye-updates main non-free contrib " >> /etc/apt/sources.list && \
-#    echo "deb-src http://mirrors.163.com/debian/ bullseye-backports main non-free contrib " >> /etc/apt/sources.list  && \
-#    echo "deb http://mirrors.163.com/debian-security/ bullseye/updates main non-free contrib  " >> /etc/apt/sources.list  && \
-#    echo "deb-src http://mirrors.163.com/debian-security/ bullseye/updates main non-free contrib " >> /etc/apt/sources.list
-#
+RUN cat /etc/apt/sources.list
+
+RUN echo "deb https://mirrors.aliyun.com/debian/ bullseye main non-free contrib" > /etc/apt/sources.list && \
+    echo "deb-src https://mirrors.aliyun.com/debian/ bullseye main non-free contrib " >> /etc/apt/sources.list  && \
+    echo "deb https://mirrors.aliyun.com/debian-security/ bullseye-security main " >> /etc/apt/sources.list && \
+    echo "deb-src https://mirrors.aliyun.com/debian-security/ bullseye-security main " >> /etc/apt/sources.list && \
+    echo "deb https://mirrors.aliyun.com/debian/ bullseye-updates main non-free contrib " >> /etc/apt/sources.list && \
+    echo "deb-src https://mirrors.aliyun.com/debian/ bullseye-updates main non-free contrib " >> /etc/apt/sources.list && \
+    echo "deb https://mirrors.aliyun.com/debian/ bullseye-backports main non-free contrib " >> /etc/apt/sources.list && \
+    echo "deb-src https://mirrors.aliyun.com/debian/ bullseye-backports main non-free contrib " >> /etc/apt/sources.list
+
+
+
+  #
+  #
+  #
+  #
+
 
 
 ENV REFRESH_DATE 1
@@ -51,6 +60,15 @@ RUN pecl install -D 'enable-sockets="no" enable-openssl="yes" enable-http2="yes"
     # pcntl
 RUN docker-php-ext-install   pcntl \
     && docker-php-ext-enable pcntl
+#  安装 protobuf
+RUN pecl install protobuf && docker-php-ext-enable  protobuf
+
+# 安装 imagemagick
+RUN  apt install -y libltdl-dev graphviz libpng-dev libfftw3-dev
+RUN apt install -y imagemagick libmagick++-dev && \
+    pecl install imagick && \
+    docker-php-ext-enable  imagick
+
 
 # 安装composer 
 RUN wget https://mirrors.aliyun.com/composer/composer.phar \
@@ -61,8 +79,7 @@ RUN wget https://mirrors.aliyun.com/composer/composer.phar \
 
 COPY php74.ini /usr/local/etc/php/conf.d/
 
-#  安装 protobuf
-RUN pecl install protobuf && docker-php-ext-enable  protobuf
+
 
 EXPOSE 9502
 WORKDIR /var/www/html/

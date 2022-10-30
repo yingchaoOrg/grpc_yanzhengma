@@ -2,12 +2,12 @@ version: '2'
 services:
   dev:
     build: .
-    image: imphpsms:dev
+    image: yingchaoyanzhengma:dev
     privileged: false
     restart: unless-stopped
     ports:
-    - 32306:9502
-    - 32307:80
+    - 32308:9502
+    - 32309:80
     volumes:
     - .:/var/www/html
     tty: true
