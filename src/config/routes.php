@@ -11,10 +11,13 @@ declare(strict_types=1);
  */
 use Hyperf\HttpServer\Router\Router;
 
-Router::addRoute(['GET', 'POST', 'HEAD'], '/', 'App\Controller\IndexController@index');
 
 Router::get('/favicon.ico', function () {
     return '';
+});
+Router::addServer('http', function () {
+    Router::addRoute(['GET', 'POST', 'HEAD'], '/', 'App\Controller\IndexController@index');
+
 });
 
 Router::addServer('grpc', function () {
