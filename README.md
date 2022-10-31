@@ -6,6 +6,9 @@
 ## 功能列表
 
 1. 图片验证码
+2. 
 
 
-sudo docker exec -it php_sms-dev-1 bash
+   composer require easyswoole/verifycode=3.x
+
+sudo docker exec -it php_yanzhengma-dev-1 bash
