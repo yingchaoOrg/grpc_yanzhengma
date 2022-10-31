@@ -12,22 +12,41 @@ declare(strict_types=1);
 
 namespace App\Controller;
 
-use App\Service\Rlist;
 
-use function Hyperf\ViewEngine\view;
+
+
+use Hyperf\HttpMessage\Stream\SwooleStream;
+use Hyperf\HttpServer\Response;
+use Psr\Http\Message\ResponseInterface;
 
 class IndexController extends AbstractController
 {
-
-    public function index()
+    public function index2( )
     {
-        $list = $this->cache->get('list', []);
-        if (count($list) < 2) {
-            Rlist::add('1506666' . rand(1000, 9999), rand(10000, 99999));
+        return [time()];
+    }
 
-        }
+    /**
+     * @param Response $response
+     * @return ResponseInterface
+     */
+    public function index( )
+    {
 
-        return view('index', [ 'list' => $list ]);
+        $response = $this->response;
+        $config = new \EasySwoole\VerifyCode\Conf();
+        $code   = new \EasySwoole\VerifyCode\VerifyCode($config);
+
+
+        //系统验证码
+        $result   = $code->DrawCode();
+        $img_code = $result->getImageCode();
+        $mine     = $result->getImageMime();
+
+
+
+        return $result->getImageByte();
+
     }
 
 }
