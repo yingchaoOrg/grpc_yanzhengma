@@ -9,11 +9,11 @@ use Google\Protobuf\Internal\RepeatedField;
 use Google\Protobuf\Internal\GPBUtil;
 
 /**
- * 图片验证码
+ * 检查验证码是否有效
  *
- * Generated from protobuf message <code>Grpc.Yanzhengma.Request.VerifyCode</code>
+ * Generated from protobuf message <code>Grpc.Yanzhengma.Request.CheckCode</code>
  */
-class VerifyCode extends \Google\Protobuf\Internal\Message
+class CheckCode extends \Google\Protobuf\Internal\Message
 {
     /**
      * 验证码的标识
@@ -21,6 +21,12 @@ class VerifyCode extends \Google\Protobuf\Internal\Message
      * Generated from protobuf field <code>string sk = 1;</code>
      */
     protected $sk = '';
+    /**
+     * 验证码的内容
+     *
+     * Generated from protobuf field <code>string code = 2;</code>
+     */
+    protected $code = '';
 
     /**
      * Constructor.
@@ -30,6 +36,8 @@ class VerifyCode extends \Google\Protobuf\Internal\Message
      *
      *     @type string $sk
      *           验证码的标识
+     *     @type string $code
+     *           验证码的内容
      * }
      */
     public function __construct($data = NULL) {
@@ -63,8 +71,34 @@ class VerifyCode extends \Google\Protobuf\Internal\Message
         return $this;
     }
 
+    /**
+     * 验证码的内容
+     *
+     * Generated from protobuf field <code>string code = 2;</code>
+     * @return string
+     */
+    public function getCode()
+    {
+        return $this->code;
+    }
+
+    /**
+     * 验证码的内容
+     *
+     * Generated from protobuf field <code>string code = 2;</code>
+     * @param string $var
+     * @return $this
+     */
+    public function setCode($var)
+    {
+        GPBUtil::checkString($var, True);
+        $this->code = $var;
+
+        return $this;
+    }
+
 }
 
 // Adding a class alias for backwards compatibility with the previous class name.
-class_alias(VerifyCode::class, \Grpc\Yanzhengma\Request_VerifyCode::class);
+class_alias(CheckCode::class, \Grpc\Yanzhengma\Request_CheckCode::class);
 
