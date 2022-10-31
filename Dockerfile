@@ -19,13 +19,6 @@ RUN echo "deb https://mirrors.aliyun.com/debian/ bullseye main non-free contrib"
 
 
 
-  #
-  #
-  #
-  #
-
-
-
 ENV REFRESH_DATE 1
 
 RUN apt-get update
@@ -68,6 +61,12 @@ RUN  apt install -y libltdl-dev graphviz libpng-dev libfftw3-dev
 RUN apt install -y imagemagick libmagick++-dev && \
     pecl install imagick && \
     docker-php-ext-enable  imagick
+# 安装 gd
+RUN apt install -y libfreetype-dev libfreetype6-dev libfreetype6 libjpeg-dev libjpeg-tools libjpeg62-turbo-dev \
+    libjpeg62-turbo libwebp-dev libjpeg-dev libpng-dev libfreetype6-dev
+RUN docker-php-ext-configure gd --with-webp=/usr/include/webp --with-jpeg=/usr/include --with-freetype=/usr/include/freetype2 && \
+    docker-php-ext-install gd && \
+    docker-php-ext-enable gd
 
 
 # 安装composer 
