@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "d75c397b7d0b5e33c0280a6e70303de4",
+    "content-hash": "f405c95c98ccd992473f5ba18018662a",
     "packages": [
         {
             "name": "doctrine/annotations",
@@ -5518,21 +5518,42 @@
                 }
             ],
             "time": "2021-12-12T23:22:04+00:00"
+        },
+        {
+            "name": "yingchao/proto-rd",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "http://gitlab.xs.xiaobei.fun/yingchao/protobuf-router-dispatch.git",
+                "reference": "4ff62c450efa0c93a32831f5c75fa988e8916309"
+            },
+            "default-branch": true,
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "ProtoRD\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "description": "yingchao team protobuf router and",
+            "time": "2022-11-02T14:52:01+00:00"
         }
     ],
     "packages-dev": [
         {
             "name": "composer/pcre",
-            "version": "3.0.0",
+            "version": "3.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/composer/pcre.git",
-                "reference": "e300eb6c535192decd27a85bc72a9290f0d6b3bd"
+                "reference": "6af1968c25e178a49febc8b72bef2685e25be396"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/composer/pcre/zipball/e300eb6c535192decd27a85bc72a9290f0d6b3bd",
-                "reference": "e300eb6c535192decd27a85bc72a9290f0d6b3bd",
+                "url": "https://api.github.com/repos/composer/pcre/zipball/6af1968c25e178a49febc8b72bef2685e25be396",
+                "reference": "6af1968c25e178a49febc8b72bef2685e25be396",
                 "shasum": "",
                 "mirrors": [
                     {
@@ -5580,7 +5601,7 @@
             ],
             "support": {
                 "issues": "https://github.com/composer/pcre/issues",
-                "source": "https://github.com/composer/pcre/tree/3.0.0"
+                "source": "https://github.com/composer/pcre/tree/3.0.1"
             },
             "funding": [
                 {
@@ -5596,7 +5617,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2022-02-25T20:21:48+00:00"
+            "time": "2022-11-03T15:58:55+00:00"
         },
         {
             "name": "composer/semver",
@@ -5759,16 +5780,16 @@
         },
         {
             "name": "friendsofphp/php-cs-fixer",
-            "version": "v3.11.0",
+            "version": "v3.12.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/FriendsOfPHP/PHP-CS-Fixer.git",
-                "reference": "7dcdea3f2f5f473464e835be9be55283ff8cfdc3"
+                "reference": "eae11d945e2885d86e1c080eec1bb30a2aa27998"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/FriendsOfPHP/PHP-CS-Fixer/zipball/7dcdea3f2f5f473464e835be9be55283ff8cfdc3",
-                "reference": "7dcdea3f2f5f473464e835be9be55283ff8cfdc3",
+                "url": "https://api.github.com/repos/FriendsOfPHP/PHP-CS-Fixer/zipball/eae11d945e2885d86e1c080eec1bb30a2aa27998",
+                "reference": "eae11d945e2885d86e1c080eec1bb30a2aa27998",
                 "shasum": "",
                 "mirrors": [
                     {
@@ -5807,8 +5828,8 @@
                 "phpspec/prophecy": "^1.15",
                 "phpspec/prophecy-phpunit": "^2.0",
                 "phpunit/phpunit": "^9.5",
-                "phpunitgoodpractices/polyfill": "^1.5",
-                "phpunitgoodpractices/traits": "^1.9.1",
+                "phpunitgoodpractices/polyfill": "^1.6",
+                "phpunitgoodpractices/traits": "^1.9.2",
                 "symfony/phpunit-bridge": "^6.0",
                 "symfony/yaml": "^5.4 || ^6.0"
             },
@@ -5842,7 +5863,7 @@
             "description": "A tool to automatically fix PHP code style",
             "support": {
                 "issues": "https://github.com/FriendsOfPHP/PHP-CS-Fixer/issues",
-                "source": "https://github.com/FriendsOfPHP/PHP-CS-Fixer/tree/v3.11.0"
+                "source": "https://github.com/FriendsOfPHP/PHP-CS-Fixer/tree/v3.12.0"
             },
             "funding": [
                 {
@@ -5850,7 +5871,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2022-09-01T18:24:51+00:00"
+            "time": "2022-10-12T14:20:51+00:00"
         },
         {
             "name": "hamcrest/hamcrest-php",
@@ -6398,16 +6419,16 @@
         },
         {
             "name": "phpstan/phpstan",
-            "version": "0.12.99",
+            "version": "0.12.100",
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpstan/phpstan.git",
-                "reference": "b4d40f1d759942f523be267a1bab6884f46ca3f7"
+                "reference": "48236ddf823547081b2b153d1cd2994b784328c3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpstan/phpstan/zipball/b4d40f1d759942f523be267a1bab6884f46ca3f7",
-                "reference": "b4d40f1d759942f523be267a1bab6884f46ca3f7",
+                "url": "https://api.github.com/repos/phpstan/phpstan/zipball/48236ddf823547081b2b153d1cd2994b784328c3",
+                "reference": "48236ddf823547081b2b153d1cd2994b784328c3",
                 "shasum": "",
                 "mirrors": [
                     {
@@ -6444,7 +6465,7 @@
             "description": "PHPStan - PHP Static Analysis Tool",
             "support": {
                 "issues": "https://github.com/phpstan/phpstan/issues",
-                "source": "https://github.com/phpstan/phpstan/tree/0.12.99"
+                "source": "https://github.com/phpstan/phpstan/tree/0.12.100"
             },
             "funding": [
                 {
@@ -6456,15 +6477,11 @@
                     "type": "github"
                 },
                 {
-                    "url": "https://www.patreon.com/phpstan",
-                    "type": "patreon"
-                },
-                {
                     "url": "https://tidelift.com/funding/github/packagist/phpstan/phpstan",
                     "type": "tidelift"
                 }
             ],
-            "time": "2021-09-12T20:09:55+00:00"
+            "time": "2022-11-01T09:52:08+00:00"
         },
         {
             "name": "phpunit/php-code-coverage",
@@ -8629,31 +8646,33 @@
             "time": "2021-07-28T10:34:58+00:00"
         },
         {
-            "name": "yingchao/proto-rd",
+            "name": "yingchao/yzmservice",
             "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "http://gitlab.xs.xiaobei.fun/yingchao/protobuf-router-dispatch.git",
-                "reference": "6a778641b9826eedfae6e02c22620788f5f578b6"
+            "dist": {
+                "type": "path",
+                "url": "service",
+                "reference": "3367d4b987b2606297e834ed90c26e2399f0e41e"
             },
-            "default-branch": true,
+            "require": {
+                "yingchao/proto-rd": "dev-master"
+            },
             "type": "library",
             "autoload": {
                 "psr-4": {
-                    "ProtoRD\\": "src/"
+                    "YcGrpc\\YZMService\\": "src/",
+                    "YcGrpc\\YZMProto\\": "proto/YcGrpc/YZMProto/"
                 }
             },
-            "license": [
-                "MIT"
-            ],
-            "description": "yingchao team protobuf router and",
-            "time": "2022-10-28T09:17:49+00:00"
+            "transport-options": {
+                "relative": true
+            }
         }
     ],
     "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
-        "yingchao/proto-rd": 20
+        "yingchao/proto-rd": 20,
+        "yingchao/yzmservice": 20
     },
     "prefer-stable": true,
     "prefer-lowest": false,

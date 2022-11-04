@@ -31,7 +31,8 @@
         "hyperf/redis": "~2.2.0",
         "hyperf/view": "^2.2",
         "hyperf/view-engine": "^2.2",
-        "symfony/var-dumper": "^5.4"
+        "symfony/var-dumper": "^5.4",
+        "yingchao/proto-rd": "dev-master"
     },
     "require-dev": {
         "friendsofphp/php-cs-fixer": "^3.0",
@@ -42,7 +43,7 @@
         "mockery/mockery": "^1.0",
         "phpstan/phpstan": "^0.12",
         "swoole/ide-helper": "^4.5",
-        "yingchao/proto-rd": "dev-master"
+        "yingchao/yzmservice": "dev-master"
     },
     "suggest": {
         "ext-openssl": "Required to use HTTPS.",
@@ -99,6 +100,10 @@
         {
             "type": "vcs",
             "url": "http://gitlab.xs.xiaobei.fun/yingchao/protobuf-router-dispatch.git"
+        },
+        {
+            "type": "path",
+            "url": "service"
         }
     ]
 }

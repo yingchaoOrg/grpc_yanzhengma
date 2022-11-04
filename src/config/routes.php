@@ -21,7 +21,9 @@ Router::addServer('http', function () {
 });
 
 Router::addServer('grpc', function () {
-    Router::addGroup('/Grpc.Sms', function () {
-        Router::post('/SendVerify', 'App\Controller\SendVerifyController@handle');
+    Router::addGroup('/Grpc.YZMProto', function () {
+        Router::post('/VerifyCode', \App\Controller\VerifyCodeController::class.'@index');
+        Router::post('/CheckCode', \App\Controller\CheckCodeController::class.'@index');
+
     });
 });

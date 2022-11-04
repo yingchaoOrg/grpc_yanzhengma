@@ -3,8 +3,9 @@
 namespace App\Controller;
 
 
-use Grpc\Common\ResultMessage;
-use Grpc\User\Response\Login;
+
+use Psr\SimpleCache\CacheInterface;
+use YcGrpc\YZMProto\Common\ResultMessage;
 
 /**
  *
@@ -14,6 +15,12 @@ abstract class BaseController
 {
 
     protected $returnClass;
+
+    /**
+     * @inject
+     * @var CacheInterface
+     */
+    protected $cache;
 
     /**
      * @param int $code

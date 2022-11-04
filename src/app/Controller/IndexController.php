@@ -15,6 +15,7 @@ namespace App\Controller;
 
 
 
+use Grpc\Yanzhengma\Request\VerifyCode;
 use Hyperf\HttpMessage\Stream\SwooleStream;
 use Hyperf\HttpServer\Response;
 use Psr\Http\Message\ResponseInterface;
@@ -30,8 +31,10 @@ class IndexController extends AbstractController
      * @param Response $response
      * @return ResponseInterface
      */
-    public function index( )
+    public function index( VerifyCode $verifyCode)
     {
+        $sk = $verifyCode->getSk();
+
 
         $response = $this->response;
         $config = new \EasySwoole\VerifyCode\Conf();
