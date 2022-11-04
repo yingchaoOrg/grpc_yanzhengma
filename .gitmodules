@@ -1,3 +1,6 @@
 [submodule "protobuf"]
 	path = protobuf
 	url = ssh://git@192.168.2.76:22022/im/protobuf.git
+[submodule "grpc_yzmservice"]
+	path = src/service
+	url =  http://gitlab.xs.xiaobei.fun/yingchao/grpc_yzmservice.git
