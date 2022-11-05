@@ -6,7 +6,7 @@ namespace App\Controller;
 
 use Psr\SimpleCache\CacheInterface;
 use YcGrpc\YZMProto\Common\ResultMessage;
-
+use Hyperf\Di\Annotation\Inject;
 /**
  *
  * 处理返回数据

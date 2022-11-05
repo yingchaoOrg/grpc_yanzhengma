@@ -13,24 +13,28 @@ use YcGrpc\YZMProto\Request\CheckCode;
  */
 class CheckCodeController extends BaseController
 {
-    protected $returnClass= \YcGrpc\YZMProto\Response\CheckCode::class;
+
+    protected $returnClass = \YcGrpc\YZMProto\Response\CheckCode::class;
 
     public function index(CheckCode $checkCode): \YcGrpc\YZMProto\Response\CheckCode
     {
-        $sk = $checkCode->getSk();
+        $sk   = $checkCode->getSk();
         $code = $checkCode->getCode();
-        if(empty($code)){
-            return $this->reutrnData(ResultCode::ERROR,'验证码不能为空！');
+        if (empty($code)) {
+            return $this->reutrnData(ResultCode::ERROR, '验证码不能为空！');
         }
-
 
 
         $old = $this->cache->get('yan' . $sk);
 
-        $rr = new \YcGrpc\YZMProto\Response\CheckCode();
-        $rr->setCheckResult($old == $code);
+        $rr   = new \YcGrpc\YZMProto\Response\CheckCode();
+        $bool = strtolower($old) == strtolower($code);
+        if ($bool) {
+            $this->cache->delete('yan' . $sk);
+        }
+        $rr->setCheckResult($bool);
 
-        return $this->reutrnData(ResultCode::SUCCESS,'',$rr);
+        return $this->reutrnData(ResultCode::SUCCESS, '', $rr);
     }
 
 }

@@ -30,7 +30,7 @@ class VerifyCodeController extends BaseController
         $rr = new \YcGrpc\YZMProto\Response\VerifyCode();
         $rr->setData($result->getImageByte());
         $rr->setMine($mine);
-
+        $rr->setCode($img_code);
         return $this->reutrnData(ResultCode::SUCCESS, '', $rr);
     }
 
